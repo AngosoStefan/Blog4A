@@ -1,9 +1,5 @@
 Bienvenue sur le Github du Blog de Stefan ANGOSO et Stéphane BALA
 
-
-Le site est à l'adresse : mdcfever.hol.es
-
-
 Objectif :
 Notre objectif était de créer un blog sur tout ce qui dérive des comics, c'est-à-dire les films et les séries avec leurs acteurs,
 les figurines, et même des articles écrits par nos soins, où nos fans peuvent commenter.
