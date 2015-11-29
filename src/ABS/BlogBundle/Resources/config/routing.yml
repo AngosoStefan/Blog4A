@@ -1,0 +1,119 @@
+abs_blog_articles:
+    path:     /
+    defaults: { _controller: ABSBlogBundle:Article:index }
+
+abs_blog_add_article:
+    path:     /addarticle
+    defaults: { _controller: ABSBlogBundle:Article:add }
+
+abs_blog_show_article:
+    path:     /{id}/showarticle
+    defaults: { _controller: ABSBlogBundle:Article:show }
+
+abs_blog_edit_article:
+    path:     /{id}/editarticle
+    defaults: { _controller: ABSBlogBundle:Article:edit }
+
+abs_blog_delete_article:
+    path:     /{id}/deletearticle
+    defaults: { _controller: ABSBlogBundle:Article:delete }
+
+abs_blog_add_movie:
+    path:     /addmovie
+    defaults: { _controller: ABSBlogBundle:Movie:add_movie }
+
+abs_blog_movies:
+    path:     /movies
+    defaults: { _controller: ABSBlogBundle:Movie:movies }
+
+abs_blog_moviesbyletter:
+    path:     /{c}/movies
+    defaults: { _controller: ABSBlogBundle:Movie:moviesbyletter }
+
+abs_blog_show_movie:
+    path:     /{id}/showmovie
+    defaults: { _controller: ABSBlogBundle:Movie:show_movie }
+
+abs_blog_edit_movie:
+    path:     /{id}/editmovie
+    defaults: { _controller: ABSBlogBundle:Movie:edit_movie }
+
+abs_blog_delete_movie:
+    path:     /{id}/deletemovie
+    defaults: { _controller: ABSBlogBundle:Movie:delete_movie }
+
+abs_blog_add_celebrity:
+    path:     /addcelebrity
+    defaults: { _controller: ABSBlogBundle:Celebrity:add_celebrity }
+
+abs_blog_celebrities:
+    path:     /celebrities
+    defaults: { _controller: ABSBlogBundle:Celebrity:celebrities }
+
+abs_blog_show_celebrity:
+    path:     /{name}/showcelebrity
+    defaults: { _controller: ABSBlogBundle:Celebrity:show_celebrity }
+
+abs_blog_edit_celebrity:
+    path:     /{name}/editcelebrity
+    defaults: { _controller: ABSBlogBundle:Celebrity:edit_celebrity }
+
+abs_blog_delete_celebrity:
+    path:     /{name}/deletecelebrity
+    defaults: { _controller: ABSBlogBundle:Celebrity:delete_celebrity }
+
+abs_blog_add_serie:
+    path:     /addserie
+    defaults: { _controller: ABSBlogBundle:Serie:add_serie }
+
+abs_blog_series:
+    path:     /series
+    defaults: { _controller: ABSBlogBundle:Serie:series }
+
+abs_blog_seriesbyletter:
+    path:     /{c}/series
+    defaults: { _controller: ABSBlogBundle:Serie:seriesbyletter }
+
+abs_blog_show_serie:
+    path:     /{id}/showserie
+    defaults: { _controller: ABSBlogBundle:Serie:show_serie }
+
+abs_blog_edit_serie:
+    path:     /{id}/editserie
+    defaults: { _controller: ABSBlogBundle:Serie:edit_serie }
+
+abs_blog_delete_serie:
+    path:     /{id}/deleteserie
+    defaults: { _controller: ABSBlogBundle:Serie:delete_serie }
+
+abs_blog_add_comment:
+    path:     /{id}/addcomment
+    defaults: { _controller: ABSBlogBundle:Comment:add_comment }
+
+abs_blog_show_comment:
+    path:     /{id}/showcomment
+    defaults: { _controller: ABSBlogBundle:Comment:show_comment }
+
+abs_blog_add_figurine:
+    path:     /addfigurine
+    defaults: { _controller: ABSBlogBundle:Figurine:add_figurine }
+
+abs_blog_figurines:
+    path:     /figurines
+    defaults: { _controller: ABSBlogBundle:Figurine:figurines }
+
+abs_blog_show_figurine:
+    path:     /{id}/showfigurine
+    defaults: { _controller: ABSBlogBundle:Figurine:show_figurine}
+
+abs_blog_edit_figurine:
+    path:     /{id}/editfigurine
+    defaults: { _controller: ABSBlogBundle:Figurine:edit_figurine }
+
+abs_blog_delete_figurine:
+    path:     /{id}/deletefigurine
+    defaults: { _controller: ABSBlogBundle:Figurine:delete_figurine }
+
+abs_blog_add_test:
+    path:     /addtest
+    defaults: { _controller: ABSBlogBundle:Test:add_test }

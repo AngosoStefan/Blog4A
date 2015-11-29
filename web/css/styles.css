@@ -1,0 +1,280 @@
+
+/* Bandeau en haut de page */
+
+.maintitle{
+  background-color: #8FBDD5;
+  font-weight:bold;
+  border: solid #D91E18 3px;
+  line-height: 50px;
+}
+
+.footer{
+  background-color: #8FBDD5;
+  font-weight:bold;
+  border: solid #D91E18 3px;
+}
+
+.maintitle a {
+  color:#22313F;
+}
+
+
+/* Gestion des utilisateurs */
+
+.avatar {
+  height:150px;
+  width:150px;
+  text-align: center;
+}
+
+
+/* Texte de la section */
+
+#lowtitle {
+  color:#8FBDD5;
+  font-weight:bold;
+  text-align: center;
+}
+
+html,body {
+  background-color: #22313F;
+  width: auto !important;
+  overflow-x:hidden !important;
+  
+}
+
+
+[class*="col-"] {
+  border-radius: 4px;
+  margin-top:10px;
+  margin-bottom:10px;
+  text-align:center;
+  font-family: Calibri;
+  font-size: 17px;
+  color:#8FBDD5;
+}
+
+*.link {
+  text-align: right;
+}
+
+.mainpic {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Zones de films et séries */
+
+.zone {
+  margin-top: 30px;
+  height: 220px;
+}
+
+.picture {
+  height:145px;
+  width: 105px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+
+/* Affichage d'un film/série */
+
+.listtab {
+ border: 1px solid black;
+ width:100%;
+ color:#8FBDD5;
+}
+
+.listtab th, .listtab td {
+  border: 3px solid black;
+  width: 50%;
+  text-align: center;
+}
+
+
+/* Affichage par lettre */
+
+.letter {
+  width:300px;
+}
+
+.letter a {
+  color:#8FBDD5;
+}
+
+.bigpicture {
+  height: 400px;
+}
+
+.line{
+  border : dashed 2px;
+  border-color : #22313F;
+  margin-top: 50px;
+}
+
+
+/* Gestion du menu */
+
+.menu {
+  border-radius: 5px;
+  line-height: 20px;
+  background-color: #8FBDD5;
+  border: solid #D91E18 3px;
+  font-weight: bold;
+  color:#22313F;
+}
+
+.amenu a {
+  color:#22313F;
+}
+
+.amenu a:visited {
+  color:#22313F;
+}
+
+.amenu a:visited:hover {
+  color:red;
+}
+
+.amenu a:hover {
+  border-radius:5px;
+  color:#E92227;
+  width: 100%;
+  text-decoration:none;
+  display: inline-block;
+}
+
+a {
+  color:#8FBDD5;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+  color:red;
+}
+
+input,textarea,option,select {
+  color:black;
+}
+
+/* Gestion des articles */
+
+section {
+  margin-top: 20px;
+  background-color: #8FBEDC;
+  border: solid red 3px;
+  border-radius: 5px;
+}
+
+.dblue {
+  color: #22313F;  
+}
+
+.lblue {
+  color:#8FBDD5;
+}
+
+.justify {
+  text-align: justify;  
+}
+
+.art {
+  background-color: #8FBDD5;
+  border: solid #D91E18 3px;
+}
+
+.art a {
+  color: #22313F;
+}
+
+time {
+  color: #22313F;
+}
+
+.artpic {
+  height: 140px;
+  width: 230px;
+}
+
+.center {
+  width: 2000px;
+  height : 100px;
+  display : table-cell;
+  vertical-align : middle;
+  float:none;
+}
+
+.artcontent {
+  color:#22313F;
+}
+
+.arttitle {
+  color: #22313F;
+  font-weight:bold;
+}
+
+.arttitle a:hover {
+  color:red;
+}
+
+.arttext {
+  text-align: justify;
+  font-size:120%;
+  color: #22313F;
+}
+
+.editform {
+  width:80%;
+  line-height: 30px;
+  text-align: left;
+}
+
+
+/* Images des figurines */
+
+.fig{
+  height:280px;
+  width:280px;
+}
+
+button {
+  border-radius: 8px;
+  font-family: Arial;
+  color: white;
+  font-size: 20px;
+  background: #05324d;
+  padding: 0px 20px 0px 20px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #D91E18;
+  text-decoration: none;
+}
+
+
+/* Agenda */
+
+#agendacontainer {
+  height:300px;
+}
+
+#agenda {
+  border: solid #D91E18 3px;
+  padding-left:0px;
+  padding-right:0px;
+  height:100%;
+  background-color:#E3E9FF;
+}
+
+footer {
+  background-color:#8FBDD5;
+  border-top: solid #E92227 3px;
+}
+
+.celebname {
+  padding-bottom:60px;
+}

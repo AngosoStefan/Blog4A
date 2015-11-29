@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<h1>Ajouter une célébrité</h1>
+
+<form action="{{path("abs_blog_add_celebrity") }}" method="post" enctype="multipart/form-data">
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Name:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.name) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Date de Naissance:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.dateOfBirth) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Image:</b>
+		</div>
+		<div class="col-lg-2">
+			{{ form_widget(form.file, {'attr': {'onChange':'readURL(this);'}}) }}
+			<img class="avatar" id="preview" src="{{ asset('uploads/default/default.png') }}" width="100%"  />
+		</div>
+	</div>
+
+
+	<input type="submit">
+
+</form>
+
+{% endblock %}

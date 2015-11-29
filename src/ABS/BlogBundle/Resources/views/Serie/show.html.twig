@@ -1,0 +1,57 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+
+	{% if app.user=="admin" %}
+		<a href="{{ path("abs_blog_edit_serie", {id: serie.id}) }}">Editer</a><br>
+		<a href="{{ path("abs_blog_delete_serie", {id: serie.id}) }}">Supprimer</a>
+	{% endif %}
+	
+	<div class="col-lg-12">
+		<div class="row">
+			<div class="col-lg-offset-2 col-lg-8" id="lowtitle">
+				<h1>{{serie.name}}</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-5">	
+					{% if serie.path %}
+					<td><img class="bigpicture" src="{{ asset('uploads/series/'~serie.id~'.'~serie.path) }}"/></td>
+					{% endif %}
+				</div>
+				<div class="col-lg-offset-1 col-lg-6">
+					<br><br><br><br>
+					<table class="listtab">
+						<tr>
+							<th>Date de sortie</th>
+							<td>{{serie.releaseDate|date('d m Y')}}</td>
+						</tr>
+						<tr>
+							<th>R&eacute;alisateur</th>
+							<td>{{serie.director}}</td>
+						</tr>
+						<tr>
+							<th>Nombre de saisons</th>
+							<td>{{serie.seasons}}</td>
+						</tr>
+						<tr>
+							<th>Dur&eacute;e</th>
+							<td>{{serie.duration}}</td>
+						</tr>
+						<tr>
+							<th>Acteur</th>
+							<td><a href="{{ path("abs_blog_show_celebrity", { name: serie.actor1}) }}">{{serie.actor1}}</a></td>
+						</tr>
+						<tr>
+							<th>Acteur</th>
+							<td><a href="{{ path("abs_blog_show_celebrity", { name: serie.actor2}) }}">{{serie.actor2}}</a></td>
+						</tr>
+						<tr>
+							<th>Acteur</th>
+							<td><a href="{{ path("abs_blog_show_celebrity", { name: serie.actor3}) }}">{{serie.actor3}}</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	{% endblock %}

@@ -1,8 +1,0 @@
-<html>
-
-<body>
-Stefan
-Bienvenue sur ma page
-</body>
-
-</html>

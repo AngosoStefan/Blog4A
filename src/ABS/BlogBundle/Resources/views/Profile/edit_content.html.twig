@@ -1,0 +1,42 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Pseudo:</b>
+		</div>
+		<div class="col-lg-1">
+			{{ form_widget(form.username) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Email:</b>
+		</div>
+		<div class="col-lg-1">
+			{{ form_widget(form.email) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Avatar:</b>
+		</div>
+		<div class="col-lg-2">
+			{{ form_widget(form.file, {'attr': {'onChange':'readURL(this);'}}) }}
+			{% if user.path == NULL %}
+				<img id="preview" src="{{ asset('uploads/default/default.png') }}" width="100%"  />
+			{% else %}
+				<img id="preview" src="{{ asset('uploads/users/'~user.id~'.'~user.path) }}" width="100%" />
+			{% endif %}
+		</div>
+	</div>
+
+	
+	{{form_rest(form)}}
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
+</form>

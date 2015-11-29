@@ -1,0 +1,25 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+
+<script src="{{ asset('js/zoom.js') }}"></script>
+
+
+<h1 id="lowtitle">FIGURINES</h1>
+				<div class="row">
+					{% for figurine in figurines %}
+
+					<div class="col-lg-6 figzone">
+						<h3>{{figurine.name}}</h3>
+						{% if figurine.path %}
+
+						
+							<img class="pic" src="{{ asset('uploads/figurines/'~figurine.name~'.'~figurine.path) }}"/>	
+							<img class="picbig" src="{{ asset('uploads/figurines/'~figurine.name~'.'~figurine.path) }}" />	
+						
+						{% endif %}
+						<h3>{{figurine.price}}€</h3>
+						<h3><a href="{{figurine.url}}"><button>More details</button></a></h3>
+					</div>
+					{% endfor %}
+				</div>
+{% endblock %}

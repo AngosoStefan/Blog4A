@@ -1,0 +1,48 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+	<link href="{{ asset('lightbox/dist/css/lightbox.css') }}" rel="stylesheet">
+    <script src="{{ asset('lightbox/dist/js/lightbox.js') }}"></script>
+	<h1 id="lowtitle">FILMS</h1>
+
+	{% if app.user=="admin" %}
+		<div class="row">
+			<div class=" col-lg-5 arttitle">
+				<h3><a href="{{ path("abs_blog_add_movie") }}">+ Ajouter un film</a></h3>
+			</div>
+		</div>
+	{% endif %}
+
+	<div class="row">   
+		<div class="col-lg-offset-1 col-lg-10">
+			<table>
+				<tr>
+					{% for letter in 'A'..'M' %}
+						<td class="letter"><a href="{{ path("abs_blog_moviesbyletter", { c: letter}) }}"><h3>{{letter}}</h3></a></td>
+					{% endfor %}
+				</tr>
+				<tr>
+				{% for letter in 'N'..'Z' %}
+					<td class="letter"><a href="{{ path("abs_blog_moviesbyletter", { c: letter}) }}"><h3>{{letter}}</h3></a></td>
+				{% endfor %}
+				</tr>
+				<tr>	
+					<td class="letter"><a href="{{ path("abs_blog_movies") }}"><h3>All</h3></a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		{% for movie in movies %}
+		<div class="col-lg-3 zone">
+			<article>
+				{% if movie.path %}
+				<a href="{{ asset('uploads/movies/'~movie.id~'.'~movie.path) }}" data-lightbox="images" data-title="{{movie.name}}" ><img class="picture" src="{{ asset('uploads/movies/'~movie.id~'.'~movie.path) }}" /></a>
+				{% endif %}
+				<br>
+				<a href="{{ path("abs_blog_show_movie", { id: movie.id}) }}">{{movie.name}}</a>
+			</article>
+		</div>
+		{% endfor %}
+	</div>
+{% endblock %}

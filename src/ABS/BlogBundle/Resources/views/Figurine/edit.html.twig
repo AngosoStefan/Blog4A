@@ -1,0 +1,54 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<h1>Editer une figurine</h1>
+
+<form action="{{path("abs_blog_edit_figurine" , { id: figurine.id}) }}" method="post" enctype="multipart/form-data">
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Nom:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.name) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Image:</b>
+		</div>
+		<div class="col-lg-2">
+			{{ form_widget(form.file, {'attr': {'onChange':'readURL(this);'}}) }}
+			{% if figurine.path == NULL %}
+				<img class="fig" id="preview" src="{{ asset('uploads/default/default.png') }}" width="100%"  />
+			{% else %}
+				<img class="fig" id="preview" src="{{ asset('uploads/figurines/'~figurine.id~'.'~figurine.path) }}" width="100%" />
+			{% endif %}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Prix(en euros):</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.price) }}
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Lien:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.url) }}
+		</div>
+	</div>
+
+	{{form_rest(form)}}
+	<input type="submit">
+
+</form>
+
+{% endblock %}

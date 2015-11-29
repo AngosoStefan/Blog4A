@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<h1>Ajouter un commentaire</h1>
+
+<form action="{{path("abs_blog_add_comment", { id: comment.id} ) }}" method="post" enctype="multipart/form-data">
+	{{form_widget(form)}}
+
+
+	<input type="submit">
+
+</form>
+
+{% endblock %}

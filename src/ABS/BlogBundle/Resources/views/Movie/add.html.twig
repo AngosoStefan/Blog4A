@@ -1,0 +1,102 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<h1>Ajouter un film</h1>
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+<form action="{{path("abs_blog_add_movie") }}" method="post" enctype="multipart/form-data">
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Nom:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.name) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Date de Sortie:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.releaseDate) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Réalisateur:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.director) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Acteur 1:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.actor1) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Acteur 2:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.actor2) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Acteur 3:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.actor3) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Durée:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.duration) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Budget:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.budget) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>BoxOffice:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.boxOffice) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Image:</b>
+		</div>
+		<div class="col-lg-2">
+			{{ form_widget(form.file, {'attr': {'onChange':'readURL(this);'}}) }}
+			<img id="preview" src="{{ asset('uploads/default/default.png') }}" width="100%"  />
+		</div>
+	</div>
+
+	
+	<input type="submit">
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<h1>Editer une série</h1>
+
+<form action="{{path("abs_blog_edit_serie" , { id: serie.id}) }}" method="post" enctype="multipart/form-data">
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Nom:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.name) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Date de Sortie:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.releaseDate) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Réalisateur:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.director) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Acteur 1:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.actor1) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Acteur 2:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.actor2) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Acteur 3:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.actor3) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Saisons:</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.seasons) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Durée(en minutes):</b>
+		</div>
+		<div class="col-lg-6 justify">
+			{{ form_widget(form.duration) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Image:</b>
+		</div>
+		<div class="col-lg-2">
+			{{ form_widget(form.file, {'attr': {'onChange':'readURL(this);'}}) }}
+			{% if serie.path == NULL %}
+				<img id="preview" src="{{ asset('uploads/default/default.png') }}" width="100%"  />
+			{% else %}
+				<img id="preview" src="{{ asset('uploads/series/'~serie.id~'.'~serie.path) }}" width="100%" />
+			{% endif %}
+		</div>
+	</div>
+
+	{{form_rest(form)}}
+	<input type="submit">
+
+</form>
+
+{% endblock %}

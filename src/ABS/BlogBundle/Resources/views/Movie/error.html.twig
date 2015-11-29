@@ -1,0 +1,30 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<h1 id="lowtitle">FILMS</h1>
+
+	<div class="row">   
+		<div class="col-lg-offset-1 col-lg-10">
+			<table>
+				<tr>
+					{% for letter in 'A'..'M' %}
+						<td class="letter"><a href="{{ path("abs_blog_moviesbyletter", { c: letter}) }}"><h3>{{letter}}</h3></a></td>
+					{% endfor %}
+				</tr>
+				<tr>
+				{% for letter in 'N'..'Z' %}
+					<td class="letter"><a href="{{ path("abs_blog_moviesbyletter", { c: letter}) }}"><h3>{{letter}}</h3></a></td>
+				{% endfor %}
+				</tr>
+				<tr>	
+					<td class="letter"><a href="{{ path("abs_blog_movies") }}"><h3>All</h3></a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12 zone">
+			<p class="lblue">Pas de films avec cette lettre</p>
+		</div>
+	</div>
+{% endblock %}

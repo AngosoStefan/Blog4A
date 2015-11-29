@@ -1,0 +1,60 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+	{% if app.user=="admin" %}
+		<a href="{{ path("abs_blog_edit_movie", { id: movie.id}) }}">Edit</a><br>
+		<a href="{{ path("abs_blog_delete_movie", { id: movie.id}) }}">Delete</a>
+	{% endif %}
+
+	<div class="col-lg-12">
+				<div class="row">
+					<div class="col-lg-offset-2 col-lg-8" id="lowtitle">
+						<h1>{{movie.name}}</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-5">	
+						{% if movie.path %}
+							<td><img class="bigpicture" src="{{ asset('uploads/movies/'~movie.id~'.'~movie.path) }}"/></td>
+						{% endif %}
+					</div>
+					<div class="col-lg-offset-1 col-lg-6">
+						<br><br><br><br>
+						<table class="listtab">
+							<tr>
+								<th>Date de sortie</th>
+								<td>{{movie.releaseDate|date('d m Y')}}</td>
+							</tr>
+							<tr>
+								<th>R&eacute;alisateur</th>
+								<td>{{movie.director}}</td>
+							</tr>
+							<tr>
+								<th>Dur&eacute;e</th>
+								<td>{{movie.duration}}</td>
+							</tr>
+							<tr>
+								<th>Budget</th>
+								<td>{{movie.budget}}</td>
+							</tr>
+							<tr>
+								<th>Box Office</th>
+								<td>{{movie.boxOffice}}</td>
+							</tr>
+							<tr>
+								<th>Acteur</th>
+								<td><a href="{{ path("abs_blog_show_celebrity", { name: movie.actor1}) }}">{{movie.actor1}}</a></td>
+							</tr>
+							<tr>
+								<th>Acteur</th>
+								<td><a href="{{ path("abs_blog_show_celebrity", { name: movie.actor2}) }}">{{movie.actor2}}</a></td>
+							</tr>
+							<tr>
+								<th>Acteur</th>
+								<td><a href="{{ path("abs_blog_show_celebrity", { name: movie.actor3}) }}">{{movie.actor3}}</a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+	</div>
+
+{% endblock %}

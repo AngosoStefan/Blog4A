@@ -1,0 +1,50 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<script src="{{ asset('js/zoom.js') }}"></script>
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    <div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Pseudo:</b>
+		</div>
+		<div class="col-lg-1">
+			{{ form_widget(form.username) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Email:</b>
+		</div>
+		<div class="col-lg-1">
+			{{ form_widget(form.email) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>MdP:</b>
+		</div>
+		<div class="col-lg-8 justify" >
+			{{ form_widget(form.plainPassword) }}
+		</div>
+	</div>
+	
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-2 justify" >
+			<b>Avatar:</b>
+		</div>
+		<div class="col-lg-2">
+			{{ form_widget(form.file, {'attr': {'onChange':'readURL(this);'}}) }}
+			<img class="avatar" id="preview" src="{{ asset('uploads/default/default.png') }}" width="100%"  />
+			
+		</div>
+	</div>
+
+	
+	{{form_rest(form)}}
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+	

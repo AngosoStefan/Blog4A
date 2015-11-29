@@ -1,7 +1,4 @@
-BLOG4A
+Blog
+====
 
-Création du blog de 4e année permettant la compréhension de Symfony2 et WAMP
-
-==========
-
-A Symfony project created on October 5, 2015, 9:15 am.
+A Symfony project created on October 12, 2015, 10:07 am.

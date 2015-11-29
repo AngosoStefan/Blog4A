@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+
+	
+	{% if app.user=="admin" %}
+		<a href="{{ path("abs_blog_edit_celebrity", { name: celebrity.name}) }}">Edit</a><br>
+		<a href="{{ path("abs_blog_delete_celebrity", { name: celebrity.name}) }}">Delete</a>
+	{% endif %}
+	<div class="row">
+			<div class="col-lg-offset-3 col-lg-6">
+				<h2>{{celebrity.name}}</h2>
+			</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-offset-3 col-lg-6">
+			<time class="lblue">Date de Naissance: {{celebrity.dateOfBirth|date('d m Y')}}</time>
+		</div>
+	</div>
+		
+	<div class="row">
+		<div class="col-lg-offset-3 col-lg-6">	
+			{% if celebrity.path %}
+				<img class="bigpicture" src="{{ asset('uploads/celebrities/'~celebrity.name~'.'~celebrity.path) }}"/>
+			{% endif %}
+		</div>
+	</div>
+
+
+{% endblock %}

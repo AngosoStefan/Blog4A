@@ -1,4 +1,0 @@
-esiea_article_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: ESIEAArticleBundle:Default:index }
-    prefix: / 

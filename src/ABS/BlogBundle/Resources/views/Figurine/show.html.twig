@@ -1,0 +1,22 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+	<link href="{{ asset('lightbox/dist/css/lightbox.css') }}" rel="stylesheet">
+    <script src="{{ asset('lightbox/dist/js/lightbox.js') }}"></script>
+		<article>
+			<header>
+				{% if app.user=="admin" %}
+					<a href="{{ path("abs_blog_edit_figurine", { id: figurine.id}) }}">Editer</a><br>
+					<a href="{{ path("abs_blog_delete_figurine", { id: figurine.id}) }}">Supprimer</a>
+				{% endif %}
+				<h2>{{figurine.name}}</h2>
+				{% if figurine.path %}
+				<img src="{{ asset('uploads/figurines/'~figurine.id~'.'~figurine.path) }}" width="80%"/>
+				{% endif %}
+				<h3>{{figurine.price}}€</h2>
+				<h3><a href="{{figurine.url}}"><button>Plus de détails</button></a></h3>
+				
+			</header>
+			
+		</article>
+
+{% endblock %}

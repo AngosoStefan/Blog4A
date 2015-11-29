@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+	
+    <link href="{{ asset('lightbox/dist/css/lightbox.css') }}" rel="stylesheet">
+    <script src="{{ asset('lightbox/dist/js/lightbox.js') }}"></script>
+
+	<h1 id="lowtitle">Articles MDC Fever</h1>
+	{% if app.user=="admin" %}
+		<div class="row">
+			<div class=" col-lg-5 arttitle">
+				<h3><a href="{{ path("abs_blog_add_article") }}">+ Ajouter un article</a></h3>
+			</div>
+		</div>
+	{% endif %}
+	{% for article in articles %}
+
+	<!-- Forme générale de l'article -->
+			<div class=" col-lg-12 art">
+				<!-- Première partie : image et titre -->
+				<div class="row artcontent">
+
+					<div class="col-lg-5">	  
+					{% if article.path %}
+						<a href="{{ asset('uploads/articles/'~article.id~'.'~article.path) }}" data-lightbox="images" data-title="{{article.title}}" ><img class="artpic" src="{{ asset('uploads/articles/'~article.id~'.'~article.path) }}" /></a>
+					{% endif %}
+					</div>
+
+					<div class="col-lg-7" >
+							<h2 class="center arttitle"><a href="{{ path("abs_blog_show_article", { id: article.id}) }}">{{article.title}}</a></h2>
+							<time>{{article.date|date('d-m-Y H:i:s')}}</time>
+					</div>
+				</div>		
+			</div>
+			
+	{% endfor %}
+
+{% endblock %}

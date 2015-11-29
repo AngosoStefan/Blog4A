@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+	<h1 id="lowtitle">CELEBRITES</h1>
+	<br></br>
+	{% if app.user=="admin" %}
+		<div class="row">
+			<div class=" col-lg-5 arttitle">
+				<h3><a href="{{ path("abs_blog_add_celebrity") }}">+ Ajouter une célébrité</a></h3>
+			</div>
+		</div>
+	{% endif %}
+
+
+	{% for celebrity in celebrities %}
+		<div class="row">
+			<div class="col-lg-offset-4 col-lg-4">
+				{% if celebrity.path %}
+					<td><img src="{{ asset('uploads/celebrities/'~celebrity.name~'.'~celebrity.path) }}" width="80%"/></td>
+				{% else %}
+					<td><img src="{{ asset('uploads/default/default.png') }}" width="80%"/></td>
+				{% endif %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-offset-4 col-lg-4">	
+				<h2 class="celebname"><a href="{{ path("abs_blog_show_celebrity", { name: celebrity.name}) }}">{{celebrity.name}}</a></h2>
+			</div>
+		</div>
+
+	{% endfor %}
+	
+
+{% endblock %}

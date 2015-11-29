@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+	<link href="{{ asset('lightbox/dist/css/lightbox.css') }}" rel="stylesheet">
+    <script src="{{ asset('lightbox/dist/js/lightbox.js') }}"></script>
+
+	<h1 id="lowtitle">FIGURINES</h1>
+	{% if app.user=="admin" %}
+		<div class="row">
+			<div class=" col-lg-5 arttitle">
+				<h3><a href="{{ path("abs_blog_add_figurine") }}">+ Ajouter un figurine</a></h3>
+			</div>
+		</div>
+	{% endif %}
+	<div class="row">
+		{% for figurine in figurines %}
+
+			<div class="col-lg-6 figzone">
+				<h2 class="center arttitle"><a href="{{ path("abs_blog_show_figurine", { id: figurine.id}) }}">{{figurine.name}}</a></h2>
+				{% if figurine.path %}
+					<a href="{{ asset('uploads/figurines/'~figurine.id~'.'~figurine.path) }}" data-lightbox="images" data-title="{{figurine.name}}" ><img class="fig" src="{{ asset('uploads/figurines/'~figurine.id~'.'~figurine.path) }}" /></a>
+				{% endif %}
+				<h3>{{figurine.price}}€</h3>
+				<h3><a href="{{figurine.url}}"><button>Plus de détails</button></a></h3>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
